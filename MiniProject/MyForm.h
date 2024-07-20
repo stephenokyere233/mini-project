@@ -88,7 +88,6 @@ namespace MiniProject {
 	}
 
 
-
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
