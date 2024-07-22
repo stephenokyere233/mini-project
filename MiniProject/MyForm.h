@@ -52,6 +52,7 @@ namespace MiniProject {
 	private: System::Windows::Forms::Panel^ loginPanel;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Panel^ dashboardPanel;
+	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::ListView^ membersListView;
 
 
@@ -114,6 +115,7 @@ namespace MiniProject {
 			this->loginBtn = (gcnew System::Windows::Forms::Button());
 			this->loginPanel = (gcnew System::Windows::Forms::Panel());
 			this->dashboardPanel = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->membersListView = (gcnew System::Windows::Forms::ListView());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->loginPanel->SuspendLayout();
@@ -134,7 +136,7 @@ namespace MiniProject {
 			this->label2->Location = System::Drawing::Point(48, 201);
 			this->label2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(91, 25);
+			this->label2->Size = System::Drawing::Size(136, 40);
 			this->label2->TabIndex = 16;
 			this->label2->Text = L"Password";
 			// 
@@ -146,7 +148,7 @@ namespace MiniProject {
 			this->passwordField->Location = System::Drawing::Point(55, 237);
 			this->passwordField->Margin = System::Windows::Forms::Padding(6);
 			this->passwordField->Name = L"passwordField";
-			this->passwordField->Size = System::Drawing::Size(296, 26);
+			this->passwordField->Size = System::Drawing::Size(296, 38);
 			this->passwordField->TabIndex = 15;
 			// 
 			// panel3
@@ -165,7 +167,7 @@ namespace MiniProject {
 			this->label3->Location = System::Drawing::Point(47, 34);
 			this->label3->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(101, 32);
+			this->label3->Size = System::Drawing::Size(153, 48);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"SIGN IN";
 			// 
@@ -175,7 +177,7 @@ namespace MiniProject {
 			this->label1->Location = System::Drawing::Point(48, 101);
 			this->label1->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(97, 25);
+			this->label1->Size = System::Drawing::Size(145, 40);
 			this->label1->TabIndex = 12;
 			this->label1->Text = L"Username";
 			// 
@@ -187,7 +189,7 @@ namespace MiniProject {
 			this->usernameField->Location = System::Drawing::Point(55, 137);
 			this->usernameField->Margin = System::Windows::Forms::Padding(6);
 			this->usernameField->Name = L"usernameField";
-			this->usernameField->Size = System::Drawing::Size(296, 26);
+			this->usernameField->Size = System::Drawing::Size(296, 38);
 			this->usernameField->TabIndex = 11;
 			// 
 			// loginBtn
@@ -219,22 +221,36 @@ namespace MiniProject {
 			// 
 			// dashboardPanel
 			// 
+			this->dashboardPanel->Controls->Add(this->button1);
 			this->dashboardPanel->Controls->Add(this->membersListView);
 			this->dashboardPanel->Controls->Add(this->label4);
 			this->dashboardPanel->Location = System::Drawing::Point(-1, 3);
 			this->dashboardPanel->Name = L"dashboardPanel";
-			this->dashboardPanel->Size = System::Drawing::Size(567, 454);
+			this->dashboardPanel->Size = System::Drawing::Size(768, 454);
 			this->dashboardPanel->TabIndex = 0;
 			this->dashboardPanel->Visible = false;
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Black;
+			this->button1->Location = System::Drawing::Point(614, 19);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(116, 48);
+			this->button1->TabIndex = 2;
+			this->button1->Text = L"Logout";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// membersListView
 			// 
 			this->membersListView->BackColor = System::Drawing::Color::Black;
 			this->membersListView->ForeColor = System::Drawing::Color::White;
 			this->membersListView->HideSelection = false;
-			this->membersListView->Location = System::Drawing::Point(25, 66);
+			this->membersListView->Location = System::Drawing::Point(56, 82);
 			this->membersListView->Name = L"membersListView";
-			this->membersListView->Size = System::Drawing::Size(516, 335);
+			this->membersListView->Size = System::Drawing::Size(674, 335);
 			this->membersListView->TabIndex = 1;
 			this->membersListView->UseCompatibleStateImageBehavior = false;
 			// 
@@ -243,9 +259,9 @@ namespace MiniProject {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(107, 19);
+			this->label4->Location = System::Drawing::Point(52, 19);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(359, 32);
+			this->label4->Size = System::Drawing::Size(537, 48);
 			this->label4->TabIndex = 0;
 			this->label4->Text = L"WELCOME TO MY DASHBOARD";
 			// 
@@ -254,7 +270,7 @@ namespace MiniProject {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->ClientSize = System::Drawing::Size(569, 461);
+			this->ClientSize = System::Drawing::Size(769, 444);
 			this->Controls->Add(this->dashboardPanel);
 			this->Controls->Add(this->loginPanel);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -264,6 +280,7 @@ namespace MiniProject {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Group 2 Project Work";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->loginPanel->ResumeLayout(false);
 			this->loginPanel->PerformLayout();
 			this->dashboardPanel->ResumeLayout(false);
@@ -283,10 +300,31 @@ namespace MiniProject {
 			MessageBox::Show("Please enter a password", "Invalid Password", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else if (usernameField->Text->Trim() == "admin" && passwordField->Text->Trim() == "admin") {
+			usernameField->Text = "";
+			passwordField->Text = "";
 			loginPanel->Visible = false;
 			dashboardPanel->Visible = true;
 
 		}
+		else {
+			if (usernameField->Text->Trim() != "admin"&& passwordField->Text->Trim() != "admin") {
+				MessageBox::Show("Incorrect username & password", "Incorect Credentials", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else if (usernameField->Text->Trim() != "admin") {
+				MessageBox::Show("Incorrect username", "Incorect Credentials", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else if (passwordField->Text->Trim() != "admin") {
+			MessageBox::Show("Incorrect password", "Incorect Credentials", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			
+
+		}
 	}
-	};
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	loginPanel->Visible = true;
+	dashboardPanel->Visible = false;
+}
+};
 }
