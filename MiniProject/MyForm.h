@@ -105,6 +105,7 @@ namespace MiniProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->passwordField = (gcnew System::Windows::Forms::TextBox());
@@ -194,18 +195,24 @@ namespace MiniProject {
 			// 
 			// loginBtn
 			// 
-			this->loginBtn->ForeColor = System::Drawing::Color::Black;
+			this->loginBtn->BackColor = System::Drawing::Color::Blue;
+			this->loginBtn->FlatAppearance->BorderSize = 0;
+			this->loginBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->loginBtn->ForeColor = System::Drawing::Color::White;
 			this->loginBtn->Location = System::Drawing::Point(53, 311);
 			this->loginBtn->Margin = System::Windows::Forms::Padding(6);
 			this->loginBtn->Name = L"loginBtn";
-			this->loginBtn->Size = System::Drawing::Size(204, 44);
+			this->loginBtn->Size = System::Drawing::Size(167, 44);
 			this->loginBtn->TabIndex = 10;
 			this->loginBtn->Text = L"Login";
-			this->loginBtn->UseVisualStyleBackColor = true;
+			this->loginBtn->UseVisualStyleBackColor = false;
 			this->loginBtn->Click += gcnew System::EventHandler(this, &MyForm::loginBtn_Click);
 			// 
 			// loginPanel
 			// 
+			this->loginPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loginPanel.BackgroundImage")));
+			this->loginPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->loginPanel->Controls->Add(this->panel2);
 			this->loginPanel->Controls->Add(this->label2);
 			this->loginPanel->Controls->Add(this->passwordField);
@@ -216,7 +223,7 @@ namespace MiniProject {
 			this->loginPanel->Controls->Add(this->loginBtn);
 			this->loginPanel->Location = System::Drawing::Point(2, 0);
 			this->loginPanel->Name = L"loginPanel";
-			this->loginPanel->Size = System::Drawing::Size(564, 461);
+			this->loginPanel->Size = System::Drawing::Size(762, 461);
 			this->loginPanel->TabIndex = 18;
 			// 
 			// dashboardPanel
@@ -224,23 +231,25 @@ namespace MiniProject {
 			this->dashboardPanel->Controls->Add(this->button1);
 			this->dashboardPanel->Controls->Add(this->membersListView);
 			this->dashboardPanel->Controls->Add(this->label4);
-			this->dashboardPanel->Location = System::Drawing::Point(-1, 3);
+			this->dashboardPanel->Location = System::Drawing::Point(5, 0);
 			this->dashboardPanel->Name = L"dashboardPanel";
-			this->dashboardPanel->Size = System::Drawing::Size(768, 454);
+			this->dashboardPanel->Size = System::Drawing::Size(759, 457);
 			this->dashboardPanel->TabIndex = 0;
 			this->dashboardPanel->Visible = false;
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::Black;
+			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->button1->ForeColor = System::Drawing::Color::White;
 			this->button1->Location = System::Drawing::Point(614, 19);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(116, 48);
+			this->button1->Size = System::Drawing::Size(116, 36);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Logout";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// membersListView
@@ -326,5 +335,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	loginPanel->Visible = true;
 	dashboardPanel->Visible = false;
 }
+
+
+
 };
 }
