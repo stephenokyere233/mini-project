@@ -53,6 +53,22 @@ namespace MiniProject {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Panel^ dashboardPanel;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Panel^ pnlsignup;
+
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+
 	private: System::Windows::Forms::ListView^ membersListView;
 
 
@@ -115,12 +131,26 @@ namespace MiniProject {
 			this->usernameField = (gcnew System::Windows::Forms::TextBox());
 			this->loginBtn = (gcnew System::Windows::Forms::Button());
 			this->loginPanel = (gcnew System::Windows::Forms::Panel());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dashboardPanel = (gcnew System::Windows::Forms::Panel());
+			this->pnlsignup = (gcnew System::Windows::Forms::Panel());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->membersListView = (gcnew System::Windows::Forms::ListView());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->loginPanel->SuspendLayout();
 			this->dashboardPanel->SuspendLayout();
+			this->pnlsignup->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -198,12 +228,12 @@ namespace MiniProject {
 			this->loginBtn->BackColor = System::Drawing::Color::Blue;
 			this->loginBtn->FlatAppearance->BorderSize = 0;
 			this->loginBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
 			this->loginBtn->ForeColor = System::Drawing::Color::White;
 			this->loginBtn->Location = System::Drawing::Point(53, 311);
 			this->loginBtn->Margin = System::Windows::Forms::Padding(6);
 			this->loginBtn->Name = L"loginBtn";
-			this->loginBtn->Size = System::Drawing::Size(167, 44);
+			this->loginBtn->Size = System::Drawing::Size(115, 36);
 			this->loginBtn->TabIndex = 10;
 			this->loginBtn->Text = L"Login";
 			this->loginBtn->UseVisualStyleBackColor = false;
@@ -213,6 +243,7 @@ namespace MiniProject {
 			// 
 			this->loginPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loginPanel.BackgroundImage")));
 			this->loginPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->loginPanel->Controls->Add(this->button3);
 			this->loginPanel->Controls->Add(this->panel2);
 			this->loginPanel->Controls->Add(this->label2);
 			this->loginPanel->Controls->Add(this->passwordField);
@@ -226,16 +257,163 @@ namespace MiniProject {
 			this->loginPanel->Size = System::Drawing::Size(762, 461);
 			this->loginPanel->TabIndex = 18;
 			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::White;
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
+			this->button3->ForeColor = System::Drawing::Color::Blue;
+			this->button3->Location = System::Drawing::Point(177, 311);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(115, 36);
+			this->button3->TabIndex = 19;
+			this->button3->Text = L"Sign up";
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
 			// dashboardPanel
 			// 
+			this->dashboardPanel->Controls->Add(this->pnlsignup);
 			this->dashboardPanel->Controls->Add(this->button1);
 			this->dashboardPanel->Controls->Add(this->membersListView);
 			this->dashboardPanel->Controls->Add(this->label4);
-			this->dashboardPanel->Location = System::Drawing::Point(5, 0);
+			this->dashboardPanel->Location = System::Drawing::Point(2, 3);
 			this->dashboardPanel->Name = L"dashboardPanel";
-			this->dashboardPanel->Size = System::Drawing::Size(759, 457);
+			this->dashboardPanel->Size = System::Drawing::Size(762, 454);
 			this->dashboardPanel->TabIndex = 0;
 			this->dashboardPanel->Visible = false;
+			this->dashboardPanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::dashboardPanel_Paint);
+			// 
+			// pnlsignup
+			// 
+			this->pnlsignup->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pnlsignup.BackgroundImage")));
+			this->pnlsignup->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pnlsignup->Controls->Add(this->button2);
+			this->pnlsignup->Controls->Add(this->panel6);
+			this->pnlsignup->Controls->Add(this->panel5);
+			this->pnlsignup->Controls->Add(this->panel4);
+			this->pnlsignup->Controls->Add(this->textBox3);
+			this->pnlsignup->Controls->Add(this->textBox2);
+			this->pnlsignup->Controls->Add(this->textBox1);
+			this->pnlsignup->Controls->Add(this->label8);
+			this->pnlsignup->Controls->Add(this->label7);
+			this->pnlsignup->Controls->Add(this->label6);
+			this->pnlsignup->Controls->Add(this->label5);
+			this->pnlsignup->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pnlsignup->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->pnlsignup->Location = System::Drawing::Point(0, 0);
+			this->pnlsignup->Name = L"pnlsignup";
+			this->pnlsignup->Size = System::Drawing::Size(762, 454);
+			this->pnlsignup->TabIndex = 3;
+			this->pnlsignup->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::pnlsignup_Paint);
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::Blue;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
+			this->button2->Location = System::Drawing::Point(73, 364);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(115, 36);
+			this->button2->TabIndex = 10;
+			this->button2->Text = L"Sign up";
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::Color::White;
+			this->panel6->Location = System::Drawing::Point(73, 329);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(292, 2);
+			this->panel6->TabIndex = 9;
+			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::White;
+			this->panel5->Location = System::Drawing::Point(73, 224);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(292, 2);
+			this->panel5->TabIndex = 8;
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::White;
+			this->panel4->ForeColor = System::Drawing::Color::White;
+			this->panel4->Location = System::Drawing::Point(73, 125);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(292, 2);
+			this->panel4->TabIndex = 7;
+			// 
+			// textBox3
+			// 
+			this->textBox3->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox3->Location = System::Drawing::Point(73, 305);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(292, 32);
+			this->textBox3->TabIndex = 6;
+			// 
+			// textBox2
+			// 
+			this->textBox2->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->Location = System::Drawing::Point(73, 200);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(292, 32);
+			this->textBox2->TabIndex = 5;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+			// 
+			// textBox1
+			// 
+			this->textBox1->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->textBox1->Location = System::Drawing::Point(73, 101);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(292, 32);
+			this->textBox1->TabIndex = 4;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13));
+			this->label8->Location = System::Drawing::Point(67, 270);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(220, 36);
+			this->label8->TabIndex = 3;
+			this->label8->Text = L"Confirm Password";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13));
+			this->label7->Location = System::Drawing::Point(67, 69);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(131, 36);
+			this->label7->TabIndex = 2;
+			this->label7->Text = L"Username";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13));
+			this->label6->Location = System::Drawing::Point(67, 165);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(122, 36);
+			this->label6->TabIndex = 1;
+			this->label6->Text = L"Password";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 20));
+			this->label5->Location = System::Drawing::Point(64, 13);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(172, 54);
+			this->label5->TabIndex = 0;
+			this->label5->Text = L"SIGN UP";
 			// 
 			// button1
 			// 
@@ -294,6 +472,8 @@ namespace MiniProject {
 			this->loginPanel->PerformLayout();
 			this->dashboardPanel->ResumeLayout(false);
 			this->dashboardPanel->PerformLayout();
+			this->pnlsignup->ResumeLayout(false);
+			this->pnlsignup->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -338,5 +518,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
+private: System::Void dashboardPanel_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+
+
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pnlsignup_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
