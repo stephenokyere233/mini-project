@@ -240,10 +240,10 @@ namespace MiniProject {
 			this->loginBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->loginBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
 			this->loginBtn->ForeColor = System::Drawing::Color::White;
-			this->loginBtn->Location = System::Drawing::Point(53, 306);
+			this->loginBtn->Location = System::Drawing::Point(55, 307);
 			this->loginBtn->Margin = System::Windows::Forms::Padding(6);
 			this->loginBtn->Name = L"loginBtn";
-			this->loginBtn->Size = System::Drawing::Size(135, 36);
+			this->loginBtn->Size = System::Drawing::Size(140, 37);
 			this->loginBtn->TabIndex = 10;
 			this->loginBtn->Text = L"Login";
 			this->loginBtn->UseVisualStyleBackColor = false;
@@ -264,7 +264,7 @@ namespace MiniProject {
 			this->loginPanel->Controls->Add(this->loginBtn);
 			this->loginPanel->Location = System::Drawing::Point(0, 0);
 			this->loginPanel->Name = L"loginPanel";
-			this->loginPanel->Size = System::Drawing::Size(769, 444);
+			this->loginPanel->Size = System::Drawing::Size(684, 461);
 			this->loginPanel->TabIndex = 18;
 			// 
 			// signupBtn
@@ -274,7 +274,7 @@ namespace MiniProject {
 			this->signupBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->signupBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10));
 			this->signupBtn->ForeColor = System::Drawing::Color::Blue;
-			this->signupBtn->Location = System::Drawing::Point(209, 309);
+			this->signupBtn->Location = System::Drawing::Point(209, 308);
 			this->signupBtn->Name = L"signupBtn";
 			this->signupBtn->Size = System::Drawing::Size(140, 36);
 			this->signupBtn->TabIndex = 19;
